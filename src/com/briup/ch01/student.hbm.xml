@@ -11,5 +11,4 @@
         <property name="name" column="name" />
         <property name="address" column="address" />
     </class>
-	
 </hibernate-mapping>

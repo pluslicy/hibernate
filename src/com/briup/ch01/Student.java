@@ -1,11 +1,19 @@
 package com.briup.ch01;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String name;
 	private Integer age;
 	private String address;
+	//维护班级的关系
+	private Clazz clazz; // 学生  1 -1 班级
 	
+	public Student() {
+		
+	}
 	public Student(Long id, String name, Integer age, String address) {
 		super();
 		this.id = id;
@@ -36,6 +44,12 @@ public class Student {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public Clazz getClazz() {
+		return clazz;
+	}
+	public void setClazz(Clazz clazz) {
+		this.clazz = clazz;
 	}
 	@Override
 	public String toString() {
