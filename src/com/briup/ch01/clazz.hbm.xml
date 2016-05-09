@@ -3,14 +3,16 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.briup.ch01">
-	<class name="Student" table="tbl_student">
+	<class name="Clazz" table="tbl_clazz">
         <id name="id" column="id">
             <generator class="increment"/>
         </id>
-        <property name="age" column="age"/>
-        <property name="name" column="name" />
-        <property name="address" column="address" />
-        
-        <many-to-one name="clazz" class="Clazz" column="clazz_id"/>
+        <property name="name" column="name"/>
+        <property name="messge" column="messge" />
+        <!-- 一对多 -->
+        <set name="stus">
+        	<key column="clazz_id"></key>
+        	<one-to-many class="Student"/>
+        </set>
     </class>
 </hibernate-mapping>

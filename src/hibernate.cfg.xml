@@ -20,5 +20,6 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
         <mapping resource="com/briup/ch01/student.hbm.xml"/>
+        <mapping resource="com/briup/ch01/clazz.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
